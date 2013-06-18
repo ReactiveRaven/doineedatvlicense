@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Do I Need A Tv License</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+    <script src="components/jquery/jquery.min.js"></script>
+    <style>
+      .question,
+      .answer
+      {
+        display: none;
+        text-align: center;
+      }
+      
+      .question#watchlive
+      {
+        display: block;
+      }
+      
+      .btn
+      {
+          width: 460px;
+          padding-top: 2em;
+          padding-bottom: 2em;
+      }
+      
+      .answer p
+      {
+        text-align: left;
+      }
+    </style>
+    <script>
+      $(function () {
+        $(".btn").click(function () {
+          var $this = $(this);
+          $this.attr("disabled", "disabled");
+          $this.parents("div").first().find(".btn").hide();
+          $this.show();
+          $("#" + $this.data('next')).show();
+        });
+      })
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="question" id="watchlive">
+        <h1>Do you watch TV live as it is being broadcast?</h1>
+        <button class="btn btn-large btn-success" data-next="shared">Yes</button>
+        <button class="btn btn-large btn-danger" data-next="record">No</button>
+      </div>
+      <div class="question" id="record">
+        <h1>Do you record live TV?</h1>
+        <p>
+          This includes anything physical like VHS, DVDR or Bluray recorders, as well as downloading it to a device like your computer or a mobile phone. If you're not sure, say yes.
+        </p>
+        <button class="btn btn-large btn-success" data-next="shared">Yes</button>
+        <button class="btn btn-large btn-danger" data-next="no">No</button>
+      </div>
+      <div class="question" id="shared">
+        <h1>Is the only TV (or device) you watch shared with others, and in a communal area?</h1>
+        <button class="btn btn-large btn-success" data-next="sharedyes">Yes</button>
+        <button class="btn btn-large btn-danger" data-next="yes">No</button>
+      </div>
+      <div class="answer" id="sharedyes">
+        <h1>Yes, but only one.</h1>
+        <p>
+          A TV license covers an address. Multiple people may share a TV license in a communal area (eg: in a communal living room).
+        </p>
+        <p>
+          If you also watch in your private room, that room also needs a TV license. An example:
+        </p>
+        <p>
+          Alex, Billie and Chris all share a TV in a communal room and all have their own private rooms. Alex also watches in their room. This means they would need two licenses, one for the communal TV, and Alex would need to purchase a separate license for their private room.
+        </p>
+      </div>
+      <div class="answer" id="yes">
+        <h1>Yes, you  do.</h1>
+        <p>
+          <a href="http://www.tvlicensing.co.uk/">Visit the TVLA</a> to purchase one or learn more. You risk a fine if you need one and do not have one.
+        </p>
+        <p>
+          Note that TVLA officers are not police, and must gain a warrant (although they're likely to be able to get a warrant very quickly) before being able to force their way into your home. If you are uncomfortable, ask for a police officer.
+        </p>
+      </div>
+      <div class="answer" id="no">
+        <h1>You might not need a TV License</h1>
+        <p>
+          This is not legal advice. Visit <a href="http://www.tvlicensing.co.uk/">Visit the TVLA</a> to learn more. You risk a fine if you need one and do not have one.
+        </p>
+        <p>
+          The TVLA may write to you asking you to pay, assuming you do watch or record live TV. To stop them continuing to contact you, notify them by calling or writing back, stating your address, name, and that you do not watch or record live TV. They may request to visit your house to confirm that you do not need a license, but will then remove your address from the mailing list.
+        </p>
+      </div>
+      <div class="disclaimer">
+        The above is not legal advice. If you are in any doubt whatsoever you must contact the TVLA directly.
+      </div>
+    </div>
+  </body>
+</html>
